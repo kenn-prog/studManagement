@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Open the student list when visiting the homepage.
+Route::redirect('/', '/students');
+Route::resource('students', StudentController::class);
